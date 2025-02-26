@@ -1,5 +1,6 @@
 /target
 
-# used for local testing
+# used for local testing and automation
 getsrc.sh
 main.bin
+examples/fetch.sh

@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#pragma region I/O Functions
+#pragma region I/O
 void putchar(uint8_t ch) {
     asm volatile (
         "li a5, 0\n"
@@ -32,14 +32,20 @@ void print(const char* message) {
 }
 #pragma endregion
 
+#pragma region Control
+void ebreak() {
+    asm volatile ("ebreak");
+}
+#pragma endregion
+
 // Given that BasicMemory maps the entire address space, we can choose any address we want.
-// More protected or limited programs will want to use an allocator or fixed buffer.
+// Protected or limited environments will want to use an allocator or fixed buffer.
 // This is foregone for the sake of simplicity.
 uint8_t* buffer = (uint8_t*)0x1000000;
 
 int main() {
     while (1) {
-        print("enter a string: ");
+        print("enter a string (leave blank to exit): ");
         uint8_t ch = getchar();
         size_t count = 0;
         while (1) {
@@ -55,6 +61,9 @@ int main() {
                 count++;
             }
             ch = getchar();
+        }
+        if (count == 0) {
+            ebreak();
         }
         print("reversed string: ");
         while (count > 0) {
