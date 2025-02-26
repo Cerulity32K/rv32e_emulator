@@ -1,0 +1,10 @@
+[package]
+name = "rv32e_emulator"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+getch = "0.3.1"
+num-traits = "0.2.19"
+riscv-decode = "0.2.2"
+thiserror = "2.0.11"

@@ -1,0 +1,5 @@
+/target
+
+# used for local testing
+getsrc.sh
+main.bin
