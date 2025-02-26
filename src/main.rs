@@ -28,6 +28,5 @@ fn main() {
                 hart.pc.get()
             ),
         }
-        // println!("{hart:?}");
     }
 }
