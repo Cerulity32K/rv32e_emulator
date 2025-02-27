@@ -2,7 +2,7 @@
 
 use std::{env::args, fs};
 
-use rv32e_emulator::{BasicMemory, ECallHandler, ECallTerminal, RV32E, StepResult};
+use rv32e_emulator::{ecall::{ECallHandler, ECallTerminal}, exec::StepResult, mem::BasicMemory, RV32E};
 
 fn main() {
     let program = fs::read(args().skip(1).next().expect("no file input")).unwrap();

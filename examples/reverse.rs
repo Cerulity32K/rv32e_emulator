@@ -2,7 +2,7 @@
 //!
 //! The source code for the RISC-V program is held in `reverse.c` in the same folder as this example's source.
 
-use rv32e_emulator::{BasicMemory, ECallHandler, ECallTerminal, RV32E, StepResult};
+use rv32e_emulator::{ecall::{ECallHandler, ECallTerminal}, exec::StepResult, mem::BasicMemory, RV32E};
 
 pub const PROGRAM: &'static [u8] = include_bytes!("reverse.bin");
 

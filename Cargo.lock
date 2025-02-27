@@ -52,18 +52,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "riscv-decode"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cf8b4cfb0da0528321d22daee4299a23a8c5ac8848623d716e898d2a9eec0694"
-
-[[package]]
 name = "rv32e_emulator"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "getch",
  "num-traits",
- "riscv-decode",
  "thiserror",
 ]
 
